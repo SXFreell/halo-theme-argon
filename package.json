@@ -1,28 +1,29 @@
 {
-  "description": "A development starter theme with modern front-end technology stack for Halo",
+  "description": "Argon theme for Halo",
   "keywords": [
     "halo",
-    "halo-theme"
+    "halo-theme",
+    "argon"
   ],
-  "homepage": "https://github.com/halo-dev/theme-modern-starter#readme",
+  "homepage": "https://github.com/SXFreell/halo-theme-argon#readme",
   "bugs": {
-    "url": "https://github.com/halo-dev/theme-modern-starter/issues"
+    "url": "https://github.com/SXFreell/halo-theme-argon/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/halo-dev/theme-modern-starter"
+    "url": "https://github.com/SXFreell/halo-theme-argon"
   },
   "license": "GPL-3.0",
   "author": {
-    "name": "Halo",
-    "email": "hi@halo.run",
-    "url": "https://github.com/halo-dev"
+    "name": "SXFreell",
+    "email": "xfreell@163.com",
+    "url": "https://github.com/SXFreell"
   },
   "maintainers": [
     {
-      "name": "Ryan Wang",
-      "email": "i@ryanc.cc",
-      "url": "https://github.com/ruibaby"
+      "name": "SXFreell",
+      "email": "xfreell@163.com",
+      "url": "https://github.com/SXFreell"
     }
   ],
   "scripts": {
@@ -33,7 +34,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "alpinejs": "^3.13.7"
+    "alpinejs": "^3.13.7",
+    "normalize.css": "^8.0.1"
   },
   "lint-staged": {
     "*.{ts,json,yaml,yml,html}": [
@@ -57,6 +59,7 @@
     "postcss": "^8.4.37",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.1.13",
+    "sass": "^1.77.8",
     "tailwindcss": "^3.4.1",
     "typescript": "^4.9.5",
     "vite": "^5.1.6"

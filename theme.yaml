@@ -1,21 +1,21 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
-  name: theme-modern-starter
+  name: halo-theme-argon
 spec:
-  displayName: Modern Starter
+  displayName: Halo Argon
   author:
-    name: Halo
-    website: https://github.com/halo-dev
-  description: A development starter theme with Vite Ecosystem for Halo
+    name: SXFreell
+    website: https://github.com/SXFreell/halo-theme-argon
+  description: Argon theme for Halo
   logo: https://www.halo.run/logo
-  homepage: https://github.com/halo-dev/theme-modern-starter#readme
-  repo: https://github.com/halo-dev/theme-modern-starter
-  issues: https://github.com/halo-dev/theme-modern-starter/issues
-  settingName: "theme-modern-starter-setting"
-  configMapName: "theme-modern-starter-configMap"
+  homepage: https://github.com/SXFreell/halo-theme-argon#readme
+  repo: https://github.com/SXFreell/halo-theme-argon
+  issues: https://github.com/SXFreell/halo-theme-argon/issues
+  settingName: "halo-theme-argon-setting"
+  configMapName: "halo-theme-argon-configMap"
   version: "1.0.0"
   requires: "2.0.0"
   license:
     - name: "GPL-3.0"
-      url: "https://github.com/halo-dev/theme-modern-starter/blob/main/LICENSE"
+      url: "https://github.com/SXFreell/halo-theme-argon/blob/main/LICENSE"
