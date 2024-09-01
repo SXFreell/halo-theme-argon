@@ -1,0 +1,44 @@
+.ar-header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .ar-navbar {
+    width: 100%;
+    padding: 16px;
+    height: 80px;
+    box-shadow: 0 1px 10px rgba(130, 130, 134, .1);
+    backdrop-filter: blur(16px);
+    background-color: rgba(#3f51b5, 0.65);
+    color: #FFFFFFF2;
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      .navbar-title {
+        margin: 0 16px;
+      }
+      .navbar-nav {
+        display: flex;
+        .nav-item {
+          margin: 0 16px;
+          a {
+            color: #333;
+            text-decoration: none;
+            &:hover {
+              color: #1890ff;
+            }
+          }
+        }
+      }
+      .navbar-other {
+        display: flex;
+        margin-left: auto;
+        .nav-item {
+          margin: 0 16px;
+        }
+      }
+    }
+  }
+}

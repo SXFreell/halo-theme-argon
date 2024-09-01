@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="html (content)">
+<html lang="zh-CN" th:fragment="layout(_content, _header)">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,6 +9,9 @@
     <script th:src="@{/assets/dist/main.iife.js}"></script>
   </head>
   <body>
-    <th:block th:replace="${content}" />
+    <th:block th:if="${_header != null}">
+      <th:block th:replace="${_header}" />
+    </th:block>
+    <th:block th:replace="${_content}" />
   </body>
 </html>

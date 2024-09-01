@@ -1,0 +1,23 @@
+/*
+* 基础样式
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 14px;
+}
+
+body {
+  background: rgb(228, 231, 245);
+  position: relative;
+}
+
+.ar-container {
+  max-width: 1500px;
+  margin: 0 auto;
+}

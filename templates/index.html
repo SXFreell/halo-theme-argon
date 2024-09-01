@@ -1,7 +1,59 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" th:replace="~{modules/layout :: html(content = ~{::content})}">
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{common/layout :: layout(_content = ~{::content}, _header = ~{::header})}"
+>
+  <th:block th:fragment="header">
+    <th:block th:replace="~{module/header/index}"></th:block>
+  </th:block>
+
   <th:block th:fragment="content">
-    <div class="mx-auto flex h-screen w-96 flex-col items-center justify-center">
+    <th:block th:replace="~{module/home/banner}"></th:block>
+    <div class="ar-main">
+      <div class="ar-container main-container">
+        <aside class="ar-aside">
+          <div class="aside-item">
+            <h2 class="aside-title" th:text="${site.title}"></h2>
+          </div>
+        </aside>
+        <div class="articles" x-data="{ items: new Array(10).fill(null) }">
+          <template x-for="(item, index) in items" :key="index">
+            <div class="article ar-card">
+              <div class="article-image" style="background-image: url(https://t.mwm.moe/pc)"></div>
+              <div class="article-info">
+                <a class="article-title" x-text="'文章' + index"></a>
+                <div class="article-meta">
+                  <div class="meta-item">
+                    <span class="icon-[tabler--calendar]"></span>
+                    <span class="text">2021-09-01 9:14</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="icon-[tabler--calendar]"></span>
+                    <span class="text">2021-09-01 9:14</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="icon-[tabler--user]"></span>
+                    <span class="text">作者</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="icon-[tabler--message-circle]"></span>
+                    <span class="text">评论</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="icon-[tabler--eye]"></span>
+                    <span class="text">阅读</span>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content">
+                <span>文章简介</span>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="mx-auto flex h-screen w-96 flex-col items-center justify-center bg-blue-50">
       <ul class="w-full list-inside list-disc">
         <li th:each="post : ${posts.items}">
           <span class="icon-[tabler--box]"></span>
@@ -29,6 +81,6 @@
           <span class="i-tabler-arrow-right text-lg transition-all group-hover:translate-x-1"></span>
         </a>
       </div>
-    </div>
+    </div> -->
   </th:block>
 </html>
