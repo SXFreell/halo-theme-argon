@@ -12,8 +12,37 @@
     <div class="ar-main">
       <div class="ar-container main-container">
         <aside class="ar-aside">
-          <div class="aside-item">
-            <h2 class="aside-title" th:text="${site.title}"></h2>
+          <div class="aside-item ar-card">
+            <div class="site-intro">
+              <div class="title" th:text="${site.title}"></div>
+              <div class="summary" th:text="${site.subtitle}"></div>
+            </div>
+            <div class="site-intro-search">
+              <div class="search-text user-select-none"><span class="icon-[tabler--search]"></span>搜索</div>
+              <input type="text" class="search-input" readonly="readonly" />
+            </div>
+          </div>
+          <div class="aside-item ar-card">
+            <div class="site-statistics">
+              <div class="avatar">
+                <img th:src="${site.logo}" alt="Avatar" />
+              </div>
+              <div class="author" th:text="${site.title}"></div>
+              <div class="statistics">
+                <div class="item">
+                  <div class="count">76</div>
+                  <div class="text">文章</div>
+                </div>
+                <div class="item">
+                  <div class="count">6</div>
+                  <div class="text">分类</div>
+                </div>
+                <div class="item">
+                  <div class="count">12</div>
+                  <div class="text">标签</div>
+                </div>
+              </div>
+            </div>
           </div>
         </aside>
         <div class="articles" x-data="{ items: new Array(10).fill(null) }">

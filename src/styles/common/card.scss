@@ -2,7 +2,8 @@
   background-color: #f0f1f9;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
-  animation-name: card-show 0.25s ease-out;
+  animation: card-show 0.25s ease-out;
+  overflow: hidden;
 }
 
 @keyframes card-show {

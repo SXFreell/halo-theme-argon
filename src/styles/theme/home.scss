@@ -32,8 +32,92 @@
   width: 100%;
   .main-container {
     display: flex;
+    gap: 10px;
     .ar-aside {
       flex: 0 0 240px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .aside-item {
+        text-align: center;
+        .site-intro {
+          background: linear-gradient(150deg, rgb(96, 112, 199) 15%, rgb(63, 81, 181) 70%, rgb(60, 77, 172) 94%);
+          padding: 24px;
+          color: #fff;
+          .title {
+            font-size: 20px;
+          }
+          .summary {
+            font-size: 13px;
+            margin: 16px 0 8px 0;
+          }
+        }
+        .site-intro-search {
+          padding: 24px;
+          position: relative;
+          .search-text {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            pointer-events: none;
+            span {
+              margin-right: 4px;
+            }
+          }
+          input {
+            padding: 10px 12px;
+            height: 32px;
+            border-radius: 4px;
+            background-color: rgb(228, 231, 245);
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+        }
+        .site-statistics {
+          padding: 20px 20px 10px;
+          color: #32325d;
+          .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+          }
+          .author {
+            margin-top: 16px;
+            font-size: 18px;
+          }
+          .statistics {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 16px;
+            :nth-of-type(2) {
+              border-left: 1px solid rgba(#000, .05);
+              border-right: 1px solid rgba(#000, .05);
+            }
+            .item {
+              padding: 0 10px;
+              .count {
+                font-size: 16px;
+                margin-bottom: 4px;
+              }
+              .text {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
     }
     .articles {
       flex: 1;
