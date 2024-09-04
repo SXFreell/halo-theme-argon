@@ -8,11 +8,43 @@
   </th:block>
 
   <th:block th:fragment="content">
+    <script>
+      // 动态调整每个网格项的高度
+      function resizeGridItems() {
+        const grid = document.querySelector(".grid-home-content");
+        const items = grid.querySelectorAll(".grid-home-item");
+
+        items.forEach((item) => {
+          const rowHeight = 10; // 基准行高
+          const itemHeight = item.getBoundingClientRect().height; // 获取项目的实际高度
+
+          // 计算跨越的行数，并设置
+          const span = Math.ceil(itemHeight / rowHeight);
+          item.parentElement.style.gridRow = `span ${span}`;
+          item.style.height = `100%`;
+          item.classList.add("ar-card-visible");
+        });
+      }
+
+      // 节流
+      const thResizeGridItems = window._.throttle(resizeGridItems, 300);
+
+      // 加载时和窗口大小变化时调整网格项
+      window.addEventListener("DOMContentLoaded", thResizeGridItems);
+      window.addEventListener("resize", thResizeGridItems);
+
+      // 当内容发生变化时重新调整网格项
+      // const items = document.querySelectorAll('.grid-home-item');
+      // items.forEach(item => {
+      //   item.addEventListener('DOMNodeInserted', thResizeGridItems);
+      //   item.addEventListener('DOMNodeRemoved', thResizeGridItems);
+      // });
+    </script>
     <th:block th:replace="~{module/home/banner}"></th:block>
     <div class="ar-main">
       <div class="ar-container main-container">
         <aside class="ar-aside">
-          <div class="aside-item ar-card">
+          <div class="aside-item ar-card ar-card-visible">
             <div class="site-intro">
               <div class="title" th:text="${site.title}"></div>
               <div class="summary" th:text="${site.subtitle}"></div>
@@ -22,7 +54,7 @@
               <input type="text" class="search-input" readonly="readonly" />
             </div>
           </div>
-          <div class="aside-item ar-card">
+          <div class="aside-item ar-card ar-card-visible">
             <div class="site-statistics">
               <div class="avatar">
                 <img th:src="${site.logo}" alt="Avatar" />
@@ -45,37 +77,39 @@
             </div>
           </div>
         </aside>
-        <div class="articles" x-data="{ items: new Array(10).fill(null) }">
+        <div class="articles grid-home-content" x-data="{ items: new Array(10).fill(null) }">
           <template x-for="(item, index) in items" :key="index">
-            <div class="article ar-card">
-              <div class="article-image" style="background-image: url(https://t.mwm.moe/pc)"></div>
-              <div class="article-info">
-                <a class="article-title" x-text="'文章' + index"></a>
-                <div class="article-meta">
-                  <div class="meta-item">
-                    <span class="icon-[tabler--calendar]"></span>
-                    <span class="text">2021-09-01 9:14</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="icon-[tabler--calendar]"></span>
-                    <span class="text">2021-09-01 9:14</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="icon-[tabler--user]"></span>
-                    <span class="text">作者</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="icon-[tabler--message-circle]"></span>
-                    <span class="text">评论</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="icon-[tabler--eye]"></span>
-                    <span class="text">阅读</span>
+            <div class="article-outter">
+              <div class="article ar-card grid-home-item">
+                <div class="article-image" style="background-image: url(https://t.mwm.moe/pc)"></div>
+                <div class="article-info">
+                  <a class="article-title" x-text="'文章' + index"></a>
+                  <div class="article-meta">
+                    <div class="meta-item">
+                      <span class="icon-[tabler--calendar]"></span>
+                      <span class="text">2021-09-01 9:14</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="icon-[tabler--calendar]"></span>
+                      <span class="text">2021-09-01 9:14</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="icon-[tabler--user]"></span>
+                      <span class="text">作者</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="icon-[tabler--message-circle]"></span>
+                      <span class="text">评论</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="icon-[tabler--eye]"></span>
+                      <span class="text">阅读</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="article-content">
-                <span>文章简介</span>
+                <div class="article-content">
+                  <span x-text="new Array((10 - index) * 10).fill('文章简介').join('')">文章简介</span>
+                </div>
               </div>
             </div>
           </template>

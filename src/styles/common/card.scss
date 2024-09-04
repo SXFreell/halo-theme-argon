@@ -2,8 +2,11 @@
   background-color: #f0f1f9;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
-  animation: card-show 0.25s ease-out;
   overflow: hidden;
+  &.ar-card-visible {
+    visibility: visible !important;
+    animation: card-show 0.25s ease-out;
+  }
 }
 
 @keyframes card-show {

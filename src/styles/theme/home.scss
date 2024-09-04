@@ -127,6 +127,14 @@
       gap: 10px;
       .article {
         padding: 30px;
+        visibility: hidden;
+        .article-image {
+          height: 240px;
+          margin: -30px -30px 20px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
         .article-title {
           font-size: 1.8rem;
           line-height: 2rem;
