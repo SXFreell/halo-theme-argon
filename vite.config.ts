@@ -8,8 +8,6 @@ const entryFiles = globSync(["src/main.ts", "src/libs/**/*.*", "src/page/**/*.*"
   fileURLToPath(new URL(file, import.meta.url)),
 ]);
 
-console.log(Object.fromEntries(entryFiles));
-
 export default defineConfig({
   plugins: [],
   build: {
