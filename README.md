@@ -17,6 +17,9 @@ Halo-Theme-Argon 移植自 WordPress 版 Argon 主题。
 - 集成了 [Alpine.js](https://alpinejs.dev/)。
 - 集成了 ESLint + Prettier。
 
+## 计划
+- [ ] 文章计数与阅读时间
+
 ## 开发
 
 ```bash
